@@ -1,2 +1,2 @@
-# reimplemented-vector
-Performs basic vector functions. Includes unit tests.
+# Reimplemented Vector
+Reimplements common functions of std::vector.
