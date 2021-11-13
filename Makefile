@@ -1,19 +1,19 @@
 CC = g++
-CFLAGS = -g -Wall
+CFLAGS = -g -Wall  -std=c++17
 
-all: vector
-
-vector: main.o TemplateUnitTests.o IntUnitTests.o
-	$(CC) $(CFLAGS) -o main main.o TemplateUnitTests.o IntUnitTests.o
+all: tests
 
 main.o: main.cpp
-	$(CC) -c main.cpp 
+	$(CC) $(CFLAGS) -c main.cpp 
 
 TemplateUnitTests.o: TemplateUnitTests.cpp
-	$(CC) -c TemplateUnitTests.cpp
+	$(CC) $(CFLAGS) -c TemplateUnitTests.cpp
 
 IntUnitTests.o: IntUnitTests.cpp
-	$(CC) -c IntUnitTests.cpp
+	$(CC) $(CFLAGS) -c IntUnitTests.cpp
+
+tests: main.o TemplateUnitTests.o IntUnitTests.o
+	$(CC) $(CFLAGS) -o tests main.o TemplateUnitTests.o IntUnitTests.o
 
 clean:
-	rm -rf *o vector
+	rm -rf *o tests 
